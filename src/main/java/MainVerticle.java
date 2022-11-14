@@ -2,6 +2,10 @@ import io.vertx.core.*;
 import io.vertx.ext.web.Router;
 import io.vertx.ext.web.handler.BodyHandler;
 
+/**
+ * Main entry point into the app. Creates and deploys an AnalyzeVerticle to handle
+ * POST /analyze
+ */
 public class MainVerticle extends AbstractVerticle {
     public static void main(String[] args) {
         Launcher.executeCommand("run", MainVerticle.class.getName());

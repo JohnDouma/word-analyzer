@@ -6,10 +6,19 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.net.URISyntaxException;
 
+/**
+ * This class handles the POST /analyze method
+ */
 public class AnalyzeVerticle extends AbstractVerticle {
     public static String ANALYZE = "analyze.address";
     private WordList wordList = WordList.getInstance();
 
+    /**
+     * This constructor is needed to handle a possible IOException that can be
+     * thrown from instantiating the word list
+     *
+     * @throws IOException if the exception is thrown from wordList instantiation
+     */
     public AnalyzeVerticle() throws IOException {
     }
 
