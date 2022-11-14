@@ -88,6 +88,9 @@ public class WordList {
      * Adds word to word list
      */
     public synchronized void addWord(String word) throws FileNotFoundException, URISyntaxException {
+        if (treeSet.contains(word.toLowerCase())) {
+            return;
+        }
         treeSet.add(word.toLowerCase());
         treeMap.put(WordUtils.getValue(word), word.toLowerCase());
         FileUtils.addWordToFile(word, wordFilename);
